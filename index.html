@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draft Party</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a href="https://draftparty.net" target="_blank">
+      <img id="headerImage" src="img/DraftWide-RGB-Colour-Large_1.png" alt="Draft Party Header">
+    </a>
+    <h1>Have fun building your team, just by playing a game!</h1>
+  </header>
+  <img id="leaderboardImage" src="img/draft-party-leaderboard-page-passive.93a71a0.png" alt="Draft Party Leadeboard">
+  <a href="https://draftparty.net/leaderboards" class="cta-button">GET STARTED</a>
+
+  <script>
+    function updateGradient() {
+      const leaderboardHeightPercentage = (document.getElementById('leaderboardImage').offsetHeight / window.innerHeight) * 100;
+      document.body.style.backgroundImage = `linear-gradient(170deg, #ffffff ${leaderboardHeightPercentage}%, #104373 ${leaderboardHeightPercentage}%)`;
+    }
+
+    document.getElementById('headerImage').addEventListener('load', function() {
+      updateGradient();
+    });
+
+    window.addEventListener('resize', updateGradient);
+  </script>
+</body>
+</html>
